@@ -1,0 +1,50 @@
+'use server'
+import axios from 'axios'
+import cssValidator from 'w3c-css-validator'
+import jsdom from 'jsdom'
+import { proccessValidationError } from './proccessValidationErrors'
+import { proccessValidationCssError } from './processValidationCssErrors'
+
+export const CssValidation = async (url: string) => {
+
+  try {
+    const pageResponse = await axios.get(url)
+
+    const regex = /<link\s+[^>]*>/gi
+
+    const cssLinks = pageResponse.data.match(regex)
+    const filteredCssLinks = cssLinks.filter((cssLink: string) => {
+      return (cssLink.includes('rel="stylesheet"') || cssLink.includes("rel='stylesheet'")) && cssLink.includes('.css')
+    })
+
+    const cssHrefs = filteredCssLinks.map((link: string) => {
+      const match = link.match(/href=["'](.*?)["']/)
+      return match ? match[1] : null
+    })
+
+    const filterAllTogether = cssHrefs.map(async (cssLink: any) => {
+      try {
+        const cssResponse = await axios.get(cssLink.includes('www.') ? cssLink : url + cssLink)
+        const css = cssResponse.data
+        const validationResult = await cssValidator.validateText(css)
+        const filteredValidationErrors = validationResult.errors.map((i) => {
+          return {
+            ...i,
+            css: css.split(/\r?\n/).slice([i.line - 2], [i.line + 2])
+          }
+        })
+
+        const result = filteredValidationErrors.filter((obj) => obj.message !== 'Parse Error')
+        const answers = await Promise.all(
+          filteredValidationErrors.map(async (i: any) => {
+            return await proccessValidationCssError(i)
+          })
+        )
+        return answers
+      } catch {}
+    })
+
+  } catch (error) {
+    console.error('Error during validation:', error)
+  }
+}
