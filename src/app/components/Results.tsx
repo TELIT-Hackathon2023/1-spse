@@ -37,7 +37,6 @@ const Results: FC<Props> = ({ imgUrl,url, htmlValidation }) => {
       <ScreenshotPart imgUrl={imgUrl} />
       <div className='mt-16 flex w-[80%] flex-col items-stretch gap-44'>
         <div className='flex flex-col gap-4 rounded-2xl bg-zinc-300 bg-opacity-10 p-12'>
-          <p className='font-poppins text-[40px] font-semibold text-white'>Text</p>
           
           <p className='font-poppins text-[30px] font-semibold text-white opacity-80'>Visibility and Readability of Text:</p>
           
