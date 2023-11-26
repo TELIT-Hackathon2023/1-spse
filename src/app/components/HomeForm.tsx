@@ -5,7 +5,12 @@ import { CssValidation } from '../lib/validation/cssValidation'
 import { getScreenshot } from '../lib/screenShot/cssScreenShot'
 import { users } from '../lib/usability/users'
 import { personsInteractionsWithWeb } from '../lib/usability/personsInteractionsWithWeb'
-import { all } from 'axios'
+
+type UserInteraction = {
+  content: string,
+  users: string,
+  rating: number
+};
 
 
 type Props = {
@@ -15,11 +20,15 @@ type Props = {
   setUrl: Dispatch<SetStateAction<string>>
   setHtmlValidation: Dispatch<SetStateAction<string>>
   cssValidation: Dispatch<SetStateAction<string>>
-  setUsersUsability: Dispatch<SetStateAction<string>>
+  // setUsersUsability: Dispatch<SetStateAction<UserInteraction[]>>
   url: string
 }
 
-const HomeForm: FC<Props> = ({ setProccessing, setFinishedProccessing, setImgUrl, setUrl, url, setHtmlValidation, cssValidation, setUsersUsability }) => {
+// type props {
+
+// }[]
+
+const HomeForm: FC<Props> = ({ setProccessing, setFinishedProccessing, setImgUrl, setUrl, url, setHtmlValidation, cssValidation}) => {
   const handleSubmit = async () => {
     setProccessing(true)
     // const htmlValidationResults: any = await Validate(url)
@@ -30,14 +39,13 @@ const HomeForm: FC<Props> = ({ setProccessing, setFinishedProccessing, setImgUrl
     // const imgUrl = await getScreenshot(url)
     // console.log(imgUrl)
     // setImgUrl(imgUrl)
-    const possibleUsers: string[] = await users(url)
-    console.log("turky", possibleUsers)
-    let allusers = []
-    for (const user of possibleUsers) {
-      allusers.push(await personsInteractionsWithWeb(url, user))
-    }
-    setUsersUsability(allusers)
-    console.log(allusers)
+    // const possibleUsers: string[] = await users(url)
+    // let allusers: any = []
+    // for (const user of possibleUsers) {
+    //   allusers.push(await personsInteractionsWithWeb(url, user))
+    // }
+    // setUsersUsability(allusers)
+    // console.log(allusers)
 
     setImgUrl('/static/demoWebsite.png')
 

@@ -160,16 +160,7 @@ const Results: FC<Props> = ({ imgUrl,url, htmlValidation }) => {
                 </p>
               </div>
             </Tab>
-            <Tab key='js' title='JS' className='w-full'>
-              <div className='flex flex-col gap-4 rounded-2xl bg-zinc-300 bg-opacity-10 p-12'>
-                <p className='font-poppins text-[40px] font-semibold text-white'>JS</p>
-                <p className='font-poppins text-[20px] font-semibold text-white opacity-80'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde minima magnam dolor consectetur,
-                  aspernatur laudantium. Incidunt ab a Quos a quaerat illo inventore ex aspernatur delectus nemo nisi
-                  fugiat quisquam, sit corrupti tempora in.
-                </p>
-              </div>
-            </Tab>
+            
           </Tabs>
         </div>
         <div className='flex flex-col items-center gap-6'>
@@ -186,6 +177,57 @@ const Results: FC<Props> = ({ imgUrl,url, htmlValidation }) => {
             <div className='flex justify-center items-center flex-col'>
             
               <h1 className='font-poppins text-[70px] font-semibold text-white opacity-80'>78%</h1>
+              <p className='font-poppins text-[20px] font-semibold text-white opacity-80'>Rating of web</p>
+            </div>
+            
+            
+          </div>
+          <div className='flex gap-4 rounded-2xl bg-zinc-300 bg-opacity-10 p-12 justify-between'>
+            <div className='w-[70%] flex gap-4 flex-col'>
+              <p className='font-poppins text-[30px] font-semibold text-white opacity-80'>
+                Student
+              </p>
+              <p className='font-poppins text-[15px] font-semibold text-white opacity-80'>
+              Create a dedicated section for educational content, offer special student discounts or plans, and integrate features that cater to online learning and research to enhance the website's appeal and functionality for students.
+              </p>
+            </div>
+            <div className='flex justify-center items-center flex-col'>
+            
+              <h1 className='font-poppins text-[70px] font-semibold text-white opacity-80'>72%</h1>
+              <p className='font-poppins text-[20px] font-semibold text-white opacity-80'>Rating of web</p>
+            </div>
+            
+            
+          </div>
+          <div className='flex gap-4 rounded-2xl bg-zinc-300 bg-opacity-10 p-12 justify-between'>
+            <div className='w-[70%] flex gap-4 flex-col'>
+              <p className='font-poppins text-[30px] font-semibold text-white opacity-80'>
+                Senior citizen
+              </p>
+              <p className='font-poppins text-[15px] font-semibold text-white opacity-80'>
+              Improve the website's usability for senior citizens by enhancing accessibility features such as larger text options, simplified navigation, and voice-command functionality, along with providing clear and straightforward information about services and products.
+              </p>
+            </div>
+            <div className='flex justify-center items-center flex-col'>
+            
+              <h1 className='font-poppins text-[70px] font-semibold text-white opacity-80'>68%</h1>
+              <p className='font-poppins text-[20px] font-semibold text-white opacity-80'>Rating of web</p>
+            </div>
+            
+            
+          </div>
+          <div className='flex gap-4 rounded-2xl bg-zinc-300 bg-opacity-10 p-12 justify-between'>
+            <div className='w-[70%] flex gap-4 flex-col'>
+              <p className='font-poppins text-[30px] font-semibold text-white opacity-80'>
+                Business professional
+              </p>
+              <p className='font-poppins text-[15px] font-semibold text-white opacity-80'>
+              Design a business-oriented interface with advanced features for professional users, including detailed descriptions of services and products, efficient customer support, and resources for business development, to make the website more conducive to professional use.
+              </p>
+            </div>
+            <div className='flex justify-center items-center flex-col'>
+            
+              <h1 className='font-poppins text-[70px] font-semibold text-white opacity-80'>85%</h1>
               <p className='font-poppins text-[20px] font-semibold text-white opacity-80'>Rating of web</p>
             </div>
             
