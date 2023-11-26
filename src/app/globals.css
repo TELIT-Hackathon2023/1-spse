@@ -69,3 +69,18 @@ body::-webkit-scrollbar-thumb {
   background-color: gray;
   border-radius: 4px;
 }
+
+.errors{
+  background-color: darkblue;
+}
+
+.description{
+  font-size: 2rem;
+}
+
+
+@media (max-width: 882px) {
+  .headtext {
+    font-size: 3rem;
+  }
+}
