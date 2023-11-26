@@ -164,7 +164,7 @@ const Results: FC<Props> = ({ imgUrl,url, htmlValidation }) => {
           </Tabs>
         </div>
         <div className='flex flex-col items-center gap-6'>
-          <p className='font-poppins text-[40px] font-semibold text-white'>Usibility</p>
+          <p className='font-poppins text-[40px] font-semibold text-white'>Usability</p>
           <div className='flex gap-4 rounded-2xl bg-zinc-300 bg-opacity-10 p-12 justify-between'>
             <div className='w-[70%] flex gap-4 flex-col'>
               <p className='font-poppins text-[30px] font-semibold text-white opacity-80'>
