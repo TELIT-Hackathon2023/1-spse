@@ -10,7 +10,9 @@ export default function Home() {
   const [finishedProccessing, setFinishedProccessing] = useState(false)
   const [imgUrl, setImgUrl] = useState('')
   const [url, setUrl] = useState('')
-
+  const [htmlValidation, setHtmlValidation] = useState('')
+  const [cssValidation, setCssValidation] = useState('')
+  const [usersUsability, setUsersUsability] = useState([])
   return (
     <div className='grid place-items-center '>
       <div
@@ -20,7 +22,7 @@ export default function Home() {
       >
         {finishedProccessing ? (
           <>
-            <Results url={url} imgUrl={imgUrl} />
+            <Results url={url} imgUrl={imgUrl} htmlValidation={htmlValidation}/>
           </>
         ) : proccessing ? (
           <Loader />
@@ -37,6 +39,9 @@ export default function Home() {
               setImgUrl={setImgUrl}
               setProccessing={setProccessing}
               setFinishedProccessing={setFinishedProccessing}
+              setHtmlValidation={setHtmlValidation}
+              cssValidation={setCssValidation}
+              setUsersUsability={setUsersUsability}
             />
           </>
         )}

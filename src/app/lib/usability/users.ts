@@ -26,7 +26,11 @@ export const users = async (url: string) => {
     model: 'gpt-4'
   })
 
+  const answers = completion.choices[0].message.content
+  if(typeof(answers) === 'string' ){
+    return JSON.parse(answers)
+  } else {
+    return []
+  }
   
-  console.log(completion.choices)
-  return []
 }

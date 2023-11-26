@@ -12,7 +12,7 @@ export const personsInteractionsWithWeb = async (url:string, user: string) => {
         content: [
           {
             type: 'text',
-            text: `Analyze this ${url} website content and give me back object so that i can format it to json containing  type of user and suggestion where you will make usibility test for this user ${user} for better interaction with website. Dont write any comments or addittional info just the object i want. Object example: {
+            text: `Analyze this ${url} website content and give me back object so that i can format it to json containing  type of user and suggestion where you will make usibility test for this user ${user} for better interaction with website. And return number from 1 to 100 which will rate website base on how good is created for this ${user}. Dont write any comments or addittional info just the object i want. Object example: {
                 user: ${user},
                 suggestion: 
               }`

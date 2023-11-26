@@ -11,7 +11,7 @@ export const getScreenshot = async (url: string) => {
     wait_until: 'network_idle',
     full_page: true
   }
-
+  
   const formData = new FormData()
   try {
     const response = await axios.get(apiEndpoint, { params, responseType: 'arraybuffer' })
@@ -25,8 +25,10 @@ export const getScreenshot = async (url: string) => {
           Authorization: `Client-ID ${process.env.IMGUR_CLIENT_ID}`
         }
       })
+      console.log(imgResponse.data.data.link)
 
-      await proccessScreenshot(imgResponse.data.data.link)
+      const answer = await proccessScreenshot(imgResponse.data.data.link)
+      console.log(answer)
       return imgResponse.data.data.link
     } else {
       console.log('Error:', response.status, response.statusText)

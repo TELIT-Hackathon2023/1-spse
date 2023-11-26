@@ -20,4 +20,6 @@ export const Validate = async (url: string) => {
       return await proccessValidationError(i)
     })
   )
+  
+  return answers
 }
