@@ -28,7 +28,7 @@ export default function Home() {
           <Loader />
         ) : (
           <>
-            <h2 className='font-poppinsBold text-[78px] font-semibold text-white'>Analyse your website.</h2>
+            <h2 className='headtext font-poppinsBold text-[78px] font-semibold text-white'>Analyse your website.</h2>
             <p className='font-poppins mt-6 w-[40%] text-center text-2xl font-normal text-white'>
               Simply paste your URL in the box below and press submit. We will analyse your website and provide you with
               important developer data.
