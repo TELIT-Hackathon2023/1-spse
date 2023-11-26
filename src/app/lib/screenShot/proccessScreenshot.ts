@@ -1,21 +1,9 @@
+'use server'
 import OpenAI from 'openai'
-import fs from 'fs'
-import path from 'path'
 
 export const proccessScreenshot = async (imgUrl: string) => {
   const openai = new OpenAI({ apiKey: process.env.OPEN_AI_API_KEY })
 
-  // const completion = await openai.chat.completions.create({
-  //   messages: [
-  //     { role: 'system', content: 'You are a helpful assistant.' },
-  //     {
-  //       role: 'user',
-  //       content: 'Here are two pictures of vegetables I took from the supermarket, which one will be good for curry?'
-  //     }
-  //   ],
-  //   files: [fs.createReadStream('IMG0001.png'), fs.createReadStream('IMG0002.png')],
-  //   model: 'gpt-4-vision',
-  // })
 
   const completion = await openai.chat.completions.create({
     messages: [

@@ -1,6 +1,5 @@
 'use server'
 import axios from 'axios'
-import fs from 'fs'
 import { proccessScreenshot } from './proccessScreenshot'
 import FormData from 'form-data'
 
@@ -26,8 +25,6 @@ export const getScreenshot = async (url: string) => {
           Authorization: `Client-ID ${process.env.IMGUR_CLIENT_ID}`
         }
       })
-
-      console.log(imgResponse)
 
       await proccessScreenshot(imgResponse.data.data.link)
     } else {
