@@ -26,5 +26,6 @@ export const proccessScreenshot = async (imgUrl: string) => {
     model: 'gpt-4-vision-preview'
   })
 
+  
   console.log(completion.choices)
 }
