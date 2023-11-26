@@ -27,6 +27,7 @@ export const getScreenshot = async (url: string) => {
       })
 
       await proccessScreenshot(imgResponse.data.data.link)
+      return imgResponse.data.data.link
     } else {
       console.log('Error:', response.status, response.statusText)
     }
